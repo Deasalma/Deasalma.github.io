@@ -319,21 +319,22 @@
                             <h2 class="mb-4 text-center" data-aos="fade-up">Data Scrapping II</h2>
 							
 							<!-- Web Scrapping wit Selenium -->
-							<script src = "https://code.jquery.com/jquery-3.5.1.js"></script>
+							<script src = "https://code.jquery.com/jquery-3.6.0.min.js"></script>
 							<script type="text/javascript">
-							 $(function(){
-							 $.get('./hasilscraping.json',function(driver){
+							$(function(){
+								$.get('./hasilscraping.json',function(driver){
 								var str="<table border=1>";
-									str+="<thead><tr><td>No</td><td>Judul drama</td><td>Keterangan</td><td>Rating</td><td>Gambar</td><td>ScrapTime</td></tr></thead>";
-									$.each(driver,function(n,dramalist){
-									str+="<tr><td>"+(n+1)+"</td>";
-									str+="<td><img src =\"images/"+data.Image +"\"</td>";
-									str+="<td>"+dramalist.Judul+"</td>";
-									str+="<td>"+dramalist.Keterangan+"</td>";
-									str+="<td>"+dramalist.Waktu_Scraping+"</td></tr>";
-									)};
-							str+="</table>";
-							$('#hasilscraping_json').html(str);
+								str+="<tr><td>No</td><td>Judul drama</td><td>Keterangan</td><td>Rating</td><td>Gambar</td><td>Waktu_Scrapping</td></tr>";
+								$.each(driver,function(n,data){
+								str+="<tr><td>"+(n+1)+"</td>";
+								str+="<td>"+dramalist.Judul+"</td>";
+								str+="<td>"+dramalist.Keterangan+"</td>";
+								str+="<td>"+dramalist.Rating+"</td>";
+							   	str += "<td><img src=\"images/" + dramalist.Image + "\"></td>";
+								str+="<td>"+dramalist.Waktu_Scraping+"</td></tr>";
+								)};
+								str+="</table>";
+								$('#hasilscraping_json').html(str);
 								)};
 							)};
 							</script>
