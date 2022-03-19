@@ -322,10 +322,10 @@
 							<script src = "https://code.jquery.com/jquery-3.5.1.js"></script>
 							<script type="text/javascript">
 							 $(function(){
-							 $.get('./hasilscraping.json',function(obj){
+							 $.get('./hasilscraping.json',function(driver){
 								var str="<table border=1>";
 									str+="<thead><tr><td>No</td><td>Judul drama</td><td>Keterangan</td><td>Rating</td><td>Gambar</td><td>ScrapTime</td></tr></thead>";
-									$.each(obj,function(n,dramalist){
+									$.each(driver,function(n,dramalist){
 									str+="<tr><td>"+(n+1)+"</td>";
 									str+="<td><img src =\"images/"+data.Image +"\"</td>";
 									str+="<td>"+dramalist.Judul+"</td>";
